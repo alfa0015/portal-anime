@@ -1,0 +1,21 @@
+.card
+  .card-image
+    img(:src="anime.cover_url", alt="")
+    span.card-title.white-text.title.col.s12
+      strong {{ anime.name }}
+    a.btn-floating.halfway-fab.waves-effect.waves-light.red(href="http://")
+      i.material-icons play_arrow
+  .card-content
+    .row
+      .col.s4
+        .container.number-episode.orange.white-text
+          h5 
+            span.paddin-10 cap 1
+      .col.s8
+        span.card-title.activator.grey-text.text-darken-4
+          i.material-icons.right more_vert
+  .card-reveal
+    span.card-title.grey-text.text-darken-4
+      i.material-icons.right close
+    p.text-justify
+      | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
