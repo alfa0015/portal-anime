@@ -26,4 +26,7 @@ export default {
     text-align: justify;
     text-justify: inter-word;
   }
+  .logo{
+    width: 20vh;
+  }
 </style>

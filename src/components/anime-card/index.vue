@@ -37,6 +37,6 @@ export default {
     border-bottom-right-radius:75px;
   }
   .paddin-10{
-    padding: 10em 0.5em;
+    padding: 2px 6px;
   }
 </style>
