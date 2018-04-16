@@ -1,17 +1,19 @@
 .card
   .card-image
-    img(:src="anime.cover_url", alt="")
-    span.card-title.white-text.title.col.s12
-      strong {{ anime.name }}
-    a.btn-floating.halfway-fab.waves-effect.waves-light.red(href="http://")
-      i.material-icons play_arrow
+    picture
+      source(media="(max-width: 568px)", :srcset="anime.cover_thumb_url")
+      source(media="(max-width: 1280px)", :srcset="anime.cover_medium_url")
+      img(:src="anime.cover_url")
+    span.card-title.title.col.s12
+      a.white-text(href="")
+        strong {{ anime.name }}
   .card-content
     .row
-      .col.s4.l6
-        .container.number-episode.orange.white-text
-          h5 
+      .col.s5.l6
+        .container.black-text
+          h6 
             span.paddin-10 cap 1
-      .col.s8.l6
+      .col.s7.l6
         span.card-title.activator.grey-text.text-darken-4
           i.material-icons.right more_vert
   .card-reveal

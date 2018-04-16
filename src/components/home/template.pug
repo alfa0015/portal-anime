@@ -1,12 +1,17 @@
 #home
+  .row.grey.lighten-4
+    .container
+      .col.s4.l6
+          i.material-icons.large.left-align local_movies
+      .col.s8.l6
+          h5.large.left-align Últimos episodios
   .row
     .container
-      .col.s12
-        img.logo(src="@/assets/One_Piece_logo.png", alt="")
-  .row
-    .container
-      .col.s12.l4(v-for="anime in animes")
+      .col.s12.l4(v-for="anime in animes",v-if="isLoad")
         animeCard(:anime="anime")
+      .col.s12(v-if="!isLoad")
+        center
+          preloader
   .row
     .container
       center 

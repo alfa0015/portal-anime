@@ -4,15 +4,42 @@
 <script>
 import mucks from '@/mucks/animes.js'
 import animeCard from '@/components/anime-card'
+import preloader from '@/components/preloader'
+import http from 'axios'
 export default {
   name: 'home',
   data () {
     return {
-      animes: mucks
+      animes: '',
+      isLoad: false
     }
   },
+  mounted () {
+    this.getAnimes()
+  },
   components: {
-    animeCard
+    animeCard,
+    preloader
+  },
+  methods: {
+    getAnimes () {
+      return http(
+        {
+          method: 'GET',
+          url: `${process.env.API}/animes`,
+          headers: {
+            'content-type': 'application/json; charset=utf-8'
+          }
+        }
+      )
+        .then(response => response.data)
+        .then(response => {
+          console.log(response)
+          this.animes = response
+          this.isLoad = true
+        })
+        .catch(error => { console.log(error) })
+    }
   }
 }
 </script>
