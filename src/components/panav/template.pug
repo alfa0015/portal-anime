@@ -1,11 +1,48 @@
-nav.light-blue.lighten-1(role="navigation")
+nav.grey.lighten-5(role="navigation")
   .nav-wrapper.container
-    a#logo-container.brand-logo(href="") Logo
+    a#logo-container.brand-logo(href="")
+      img(src="@/assets/logo.png")
     ul.right.hide-on-med-and-down
       li
-        a(href="#") Menu 1
+        a.grey-text(href='')
+          i.material-icons.left home
+          | Home
+      li
+        a.grey-text(href='')
+          i.material-icons.left local_movies
+          | Emision
+      li
+        a.grey-text(href='')
+          i.material-icons.left search
+          | Buscar
+      li
+        a.grey-text(href='')
+          i.fas.fa-comments.left
+          | Foro
+      li
+        a.grey-text(href='')
+          i.material-icons.left account_circle
+          | Mi cuenta
     ul#nav-mobile.sidenav
       li
-        a(href="#") Menu 1
-    a.sidenav-trigger(href="#", data-target="nav-mobile")
+        a.grey-text(href='')
+          i.material-icons.left home
+          | Home
+      li
+        a.grey-text(href='')
+          i.material-icons.left local_movies
+          | Emision
+      li
+        a.grey-text(href='')
+          i.material-icons.left search
+          | Buscar
+      li
+        a.grey-text(href='')
+          i.fas.fa-comments.left
+          | Foro
+      li
+        a.grey-text(href='')
+          i.material-icons.left account_circle
+          | Mi cuenta
+    a.sidenav-trigger.grey-text(href="#", data-target="nav-mobile")
       i.material-icons menu

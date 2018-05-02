@@ -1,10 +1,11 @@
 #home
-  .row.grey.lighten-4
+  .row.paddin10-top.valign-wrapper
     .container
-      .col.s4.l6
-          i.material-icons.large.left-align local_movies
-      .col.s8.l6
-          h5.large.left-align Últimos episodios
+      .row.grey.lighten-5.card
+        .col.s12
+          div.red-text(style="font-size:3em;")
+            i.fas.fa-play-circle.left
+          h5 Últimos episodios
   .row
     .container
       .col.s12.l4(v-for="anime in animes",v-if="isLoad")

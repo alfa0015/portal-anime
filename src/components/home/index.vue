@@ -34,7 +34,6 @@ export default {
       )
         .then(response => response.data)
         .then(response => {
-          console.log(response)
           this.animes = response
           this.isLoad = true
         })
@@ -46,6 +45,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+  body{
+    background-color: inherit;
+  }
   #home{
     margin: 0 1px;
   }
@@ -55,5 +57,8 @@ export default {
   }
   .logo{
     width: 20vh;
+  }
+  .paddin10-top{
+    padding-top: 10px;
   }
 </style>

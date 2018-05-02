@@ -39,4 +39,25 @@ export default {
   .paddin-10{
     padding: 2px 6px;
   }
+  $break-mobile: 600px;
+  $break-tablet: 768px;
+  $break-desktop: 1024px;
+  $break-large: 1200px;
+  img{
+    display: block;
+    @media screen and (max-width: $break-tablet) {
+      max-height: 100%;
+    }
+    @media screen and (max-width: $break-desktop) {
+      max-height: 100%;
+    }
+    @media screen and (min-width: $break-desktop) {
+      max-height: 300px;
+    }
+    @media screen and (min-width: $break-large) {
+      max-height: 500px;
+    }
+    max-width: 1000px;
+    overflow: hidden;
+  }
 </style>

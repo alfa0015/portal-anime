@@ -1,23 +1,19 @@
 .card
   .card-image
     picture
-      source(media="(max-width: 568px)", :srcset="anime.cover_thumb_url")
+      source(media="(max-width: 568px)", :srcset="anime.cover_small_url")
       source(media="(max-width: 1280px)", :srcset="anime.cover_medium_url")
-      img(:src="anime.cover_url")
+      img.activator.responsive-img(:src="anime.cover_url")
     span.card-title.title.col.s12
       a.white-text(href="")
         strong {{ anime.name }}
   .card-content
-    .row
-      .col.s5.l6
-        .container.black-text
-          h6 
-            span.paddin-10 cap 1
-      .col.s7.l6
-        span.card-title.activator.grey-text.text-darken-4
-          i.material-icons.right more_vert
+    span.card-title.activator.grey-text.text-darken-4
+      | Eposodio 1
+      i.material-icons.right more_vert
+  .card-action
+    a(href="") Ver episodio
   .card-reveal
     span.card-title.grey-text.text-darken-4
       i.material-icons.right close
-    p.text-justify
-      | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    p.text-justify {{anime.synopsis}}

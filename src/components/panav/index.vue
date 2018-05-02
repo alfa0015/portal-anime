@@ -13,5 +13,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+  a{
+    color:"#6c6c6c";
+  }
 </style>
