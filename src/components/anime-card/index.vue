@@ -41,7 +41,11 @@ export default {
   }
   $break-mobile: 600px;
   $break-tablet: 768px;
+  $break-tablet-min: 768px;
+  $break-tablet-max: 1024px;
   $break-desktop: 1024px;
+  $break-desktop-min: 1200px;
+  $break-desktop-max: 1600px;
   $break-large: 1200px;
   img{
     display: block;
@@ -54,7 +58,10 @@ export default {
     @media screen and (min-width: $break-desktop) {
       max-height: 300px;
     }
-    @media screen and (min-width: $break-large) {
+    @media screen and (min-width: $break-large) and (max-width: $break-desktop-min) {
+      max-height: 500px;
+    }
+    @media screen and (min-width: $break-desktop-max) {
       max-height: 500px;
     }
     max-width: 1000px;
