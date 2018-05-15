@@ -5,14 +5,15 @@
       source(media="(max-width: 1280px)", :srcset="anime.cover_medium_url")
       img.activator.responsive-img(:src="anime.cover_url")
     span.card-title.title.col.s12
-      a.white-text(href="")
+      //- router-link.white-text(:to="{ name: 'anime', params: { id: 'anime.id' }}")
+      router-link.white-text(:to="{ name: 'anime', params: { id: anime.id }}")
         strong {{ anime.name }}
   .card-content
     span.card-title.activator.grey-text.text-darken-4
       | Eposodio 1
       i.material-icons.right more_vert
   .card-action
-    a(href="") Ver episodio
+    router-link(:to="{ name: 'anime', params: { id: anime.id }}") Ver episodio
   .card-reveal
     span.card-title.grey-text.text-darken-4
       i.material-icons.right close
