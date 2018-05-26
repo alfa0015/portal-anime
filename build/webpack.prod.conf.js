@@ -111,6 +111,10 @@ const webpackConfig = merge(baseWebpackConfig, {
         {
           urlPattern: /^https:\/\/porta-anime-api\.herokuapp\.com\//,
           handler: 'cacheFirst'
+        },
+        {
+          urlPattern: /^https:\/\/s3-us-west-1\.amazonaws\.com\//,
+          handler: 'cacheFirst'
         }
       ],
       minify: true,
