@@ -107,6 +107,12 @@ const webpackConfig = merge(baseWebpackConfig, {
       cacheId: 'porta-anime',
       filename: 'service-worker.js',
       staticFileGlobs: ['dist/**/*.{js,html,css}'],
+      runtimeCaching: [
+        {
+          urlPattern: /^https:\/\/porta-anime-api\.herokuapp\.com\//,
+          handler: 'cacheFirst'
+        }
+      ],
       minify: true,
       stripPrefix: 'dist/'
     })

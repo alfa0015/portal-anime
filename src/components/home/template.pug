@@ -9,7 +9,7 @@
   .row
     .container
       .col.s12.l4(v-for="anime in animes",v-if="isLoad")
-        animeCard(:anime="anime")
+        animeCard(:anime="anime",:key="anime.id")
       .col.s12(v-if="!isLoad")
         center
           preloader
