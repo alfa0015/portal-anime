@@ -106,7 +106,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     new SWPrecacheWebpackPlugin({
       cacheId: 'porta-anime',
       filename: 'service-worker.js',
-      staticFileGlobs: ['dist/**/*.{js,html,css}'],
+      staticFileGlobs: ['dist/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff,ico}'],
       runtimeCaching: [
         {
           urlPattern: /^https:\/\/porta-anime-api\.herokuapp\.com\//,
