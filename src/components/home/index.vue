@@ -6,12 +6,16 @@ import mucks from '@/mucks/animes.js'
 import animeCard from '@/components/anime-card'
 import preloader from '@/components/preloader'
 import http from 'axios'
+import Loading from '@/components/loading'
+import * as animationData from '@/assets/pinjump.json'
 export default {
   name: 'home',
   data () {
     return {
       animes: '',
-      isLoad: false
+      isLoad: false,
+      defaultOptions: {animationData: animationData},
+      animationSpeed: 1
     }
   },
   mounted () {
@@ -19,7 +23,8 @@ export default {
   },
   components: {
     animeCard,
-    preloader
+    preloader,
+    Loading
   },
   methods: {
     getAnimes () {
@@ -38,6 +43,12 @@ export default {
           this.isLoad = true
         })
         .catch(error => { console.log(error) })
+    },
+    handleAnimation: function (anim) {
+      this.anim = anim
+    },
+    stop: function () {
+      this.anim.stop()
     }
   }
 }
