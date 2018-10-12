@@ -2,34 +2,24 @@
 </template>
 
 <script>
-import http from 'axios'
+import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'anime',
   data: () => ({
-    anime: '',
-    isLoad: false
   }),
   mounted () {
-    this.getAnime()
+    this.getAnime(this.$route.params.id)
+  },
+  computed: {
+    ...mapGetters({
+      anime: 'anime',
+      loading: 'loading'
+    })
   },
   methods: {
-    getAnime () {
-      return http(
-        {
-          method: 'GET',
-          url: `${process.env.API}/animes/${this.$route.params.id}`,
-          headers: {
-            'content-type': 'application/json; charset=utf-8'
-          }
-        }
-      )
-        .then(response => response.data)
-        .then(response => {
-          this.anime = response
-          this.isLoad = true
-        })
-        .catch(error => { console.log(error) })
-    }
+    ...mapActions({
+      getAnime: 'getAnime'
+    })
   }
 }
 </script>

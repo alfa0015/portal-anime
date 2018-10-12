@@ -8,9 +8,9 @@
           h5 Últimos episodios
   .row
     .container
-      .col.s12.l4(v-for="anime in animes",v-if="isLoad")
+      .col.s12.l4(v-for="anime in animes",v-if="!loading")
         animeCard(:anime="anime",:key="anime.id")
-      .col.s12(v-if="!isLoad")
+      .col.s12(v-if="loading")
         center
           Loading(:options="defaultOptions", v-on:animCreated="handleAnimation")
   .row
