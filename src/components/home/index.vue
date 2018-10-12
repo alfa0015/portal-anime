@@ -5,15 +5,13 @@
 import mucks from '@/mucks/animes.js'
 import animeCard from '@/components/anime-card'
 import preloader from '@/components/preloader'
-import http from 'axios'
 import Loading from '@/components/loading'
 import * as animationData from '@/assets/pinjump.json'
+import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'home',
   data () {
     return {
-      animes: '',
-      isLoad: false,
       defaultOptions: {animationData: animationData},
       animationSpeed: 1
     }
@@ -26,30 +24,22 @@ export default {
     preloader,
     Loading
   },
+  computed: {
+    ...mapGetters({
+      animes: 'animes',
+      loading: 'loading'
+    })
+  },
   methods: {
-    getAnimes () {
-      return http(
-        {
-          method: 'GET',
-          url: `${process.env.API}/animes`,
-          headers: {
-            'content-type': 'application/json; charset=utf-8'
-          }
-        }
-      )
-        .then(response => response.data)
-        .then(response => {
-          this.animes = response
-          this.isLoad = true
-        })
-        .catch(error => { console.log(error) })
-    },
     handleAnimation: function (anim) {
       this.anim = anim
     },
     stop: function () {
       this.anim.stop()
-    }
+    },
+    ...mapActions({
+      getAnimes: 'getAnimes'
+    })
   }
 }
 </script>
