@@ -9,14 +9,8 @@
       .container
         center 
           .card
-            .card-image
-              picture
-                source(media="(max-width: 568px)", :srcset="anime.banner_small_url")
-                source(media="(max-width: 1280px)", :srcset="anime.banner_medium_url")
-                img.activator.responsive-img(:src="anime.banner_url")
-              span.card-title.title.col.s12
-                router-link.white-text(:to="{ name: 'anime', params: { id: 1 }}")
-                  strong {{ anime.name }}
+            .card-image(v-if="anime")
+              vplayer(:video="anime.video_url",:banner="anime.banner_url")
   .row
     .col.s12.l8    
       .row

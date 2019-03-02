@@ -2,7 +2,7 @@ import http from 'axios'
 http.defaults.headers.get['Content-Type'] = 'application/json; charset=utf-8'
 export default {
   async getAnimes ({commit}) {
-    const url = `https://porta-anime-api.herokuapp.com/api/v1/animes`
+    const url = `${process.env.API}/animes`
     commit('LOADING', true)
     const respose = await http.get(url)
       .then(response => {
@@ -15,7 +15,7 @@ export default {
     commit('ANIMES', respose)
   },
   async getAnime ({commit}, id) {
-    const url = `https://porta-anime-api.herokuapp.com/api/v1/animes/${id}`
+    const url = `${process.env.API}/animes/${id}`
     commit('LOADING', true)
     const respose = await http.get(url)
       .then(response => {

@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+import VuePlyr from 'vue-plyr'
+import 'vue-plyr/dist/vue-plyr.css'
+Vue.use(VuePlyr)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
