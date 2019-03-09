@@ -5,6 +5,9 @@ export default {
   anime (state) {
     return state.anime
   },
+  episodes (state) {
+    return state.episodes
+  },
   loading (state) {
     return state.loading
   }

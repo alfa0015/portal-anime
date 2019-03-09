@@ -18,6 +18,7 @@ export default {
   },
   mounted () {
     this.getAnimes()
+    this.getEpisodes()
   },
   components: {
     animeCard,
@@ -25,10 +26,7 @@ export default {
     Loading
   },
   computed: {
-    ...mapGetters({
-      animes: 'animes',
-      loading: 'loading'
-    })
+    ...mapGetters(['animes', 'loading', 'episodes'])
   },
   methods: {
     handleAnimation: function (anim) {
@@ -37,9 +35,7 @@ export default {
     stop: function () {
       this.anim.stop()
     },
-    ...mapActions({
-      getAnimes: 'getAnimes'
-    })
+    ...mapActions(['getAnimes', 'getEpisodes'])
   }
 }
 </script>

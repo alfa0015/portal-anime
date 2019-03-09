@@ -9,7 +9,7 @@ export default {
   }),
   mounted () {
   },
-  props: ['anime']
+  props: ['episode']
 }
 </script>
 

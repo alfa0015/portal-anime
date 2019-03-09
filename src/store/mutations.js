@@ -5,6 +5,9 @@ export default {
   ANIME (state, data) {
     state.anime = data
   },
+  EPISODES (state, data) {
+    state.episodes = data
+  },
   LOADING (state, data) {
     state.loading = data
   }
