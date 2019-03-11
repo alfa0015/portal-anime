@@ -27,6 +27,9 @@ export default {
       })
     commit('EPISODES', respose)
   },
+  async pushEpisode ({commit}, data) {
+    commit('PUSH_EPISODES', data.data)
+  },
   async getAnime ({commit}, id) {
     const url = `${process.env.API}/animes/${id}`
     commit('LOADING', true)

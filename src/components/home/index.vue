@@ -17,16 +17,36 @@ export default {
     }
   },
   mounted () {
-    this.getAnimes()
     this.getEpisodes()
+    this.$cable.subscribe({channel: 'EpisodesChannel'})
   },
   components: {
     animeCard,
     preloader,
     Loading
   },
+  channels: {
+    EpisodesChannel: {
+      connected () {
+        setTimeout(() => {
+          this.$cable.perform({
+            channel: 'EpisodesChannel',
+            action: 'speak'
+          })
+        }, 1000)
+      },
+      disconnected () {},
+      received (data) {
+        console.log(JSON.parse(data.episode))
+        this.pushEpisode(JSON.parse(data.episode))
+      },
+      speak (message) {
+      },
+      rejected () {}
+    }
+  },
   computed: {
-    ...mapGetters(['animes', 'loading', 'episodes'])
+    ...mapGetters(['loading', 'episodes'])
   },
   methods: {
     handleAnimation: function (anim) {
@@ -35,7 +55,7 @@ export default {
     stop: function () {
       this.anim.stop()
     },
-    ...mapActions(['getAnimes', 'getEpisodes'])
+    ...mapActions(['getAnimes', 'getEpisodes', 'pushEpisode'])
   }
 }
 </script>

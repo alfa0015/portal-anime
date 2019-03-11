@@ -6,7 +6,13 @@ import router from './router'
 import store from './store'
 import VuePlyr from 'vue-plyr'
 import 'vue-plyr/dist/vue-plyr.css'
+import ActionCableVue from 'actioncable-vue'
 Vue.use(VuePlyr)
+Vue.use(ActionCableVue, {
+  debug: true,
+  debugLevel: 'all',
+  connectionUrl: 'ws://localhost:3000/cable'
+})
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

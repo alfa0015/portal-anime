@@ -8,6 +8,9 @@ export default {
   EPISODES (state, data) {
     state.episodes = data
   },
+  PUSH_EPISODES (state, data) {
+    state.episodes.data.push(data)
+  },
   LOADING (state, data) {
     state.loading = data
   }
