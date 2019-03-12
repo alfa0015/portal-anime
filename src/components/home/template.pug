@@ -8,7 +8,7 @@
           h5 Últimos episodios
   .row
     .container
-      .col.s12.l4(v-for="episode in episodes",v-if="!loading")
+      .col.s12.l4(v-for="episode in episodes.data",v-if="!loading")
         animeCard(:episode="episode",:key="episode.id")
       .col.s12(v-if="loading")
         center

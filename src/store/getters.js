@@ -8,6 +8,9 @@ export default {
   episodes (state) {
     return state.episodes
   },
+  episode (state) {
+    return state.episode
+  },
   loading (state) {
     return state.loading
   }
