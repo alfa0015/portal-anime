@@ -27,6 +27,19 @@ export default {
       })
     commit('EPISODES', respose)
   },
+  async getEpisode ({commit}, id) {
+    const url = `${process.env.API}/episodes/${id}`
+    commit('LOADING', true)
+    const respose = await http.get(url)
+      .then(response => {
+        commit('LOADING', false)
+        return response.data
+      })
+      .catch(error => {
+        return error.response
+      })
+    commit('EPISODE', respose.data)
+  },
   async pushEpisode ({commit}, data) {
     commit('PUSH_EPISODES', data.data)
   },

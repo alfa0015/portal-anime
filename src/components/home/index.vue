@@ -30,17 +30,13 @@ export default {
       connected () {
         setTimeout(() => {
           this.$cable.perform({
-            channel: 'EpisodesChannel',
-            action: 'speak'
+            channel: 'EpisodesChannel'
           })
         }, 1000)
       },
       disconnected () {},
       received (data) {
-        console.log(JSON.parse(data.episode))
         this.pushEpisode(JSON.parse(data.episode))
-      },
-      speak (message) {
       },
       rejected () {}
     }
