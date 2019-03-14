@@ -6,5 +6,5 @@ const prodEnv = require('./prod.env')
 module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
   API: '"http://localhost:3000/api/v1"',
-  WS_HOST: '"localhost:3000"'
+  WS_HOST: '"ws://localhost:3000/cable"'
 })

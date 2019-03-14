@@ -11,7 +11,7 @@ Vue.use(VuePlyr)
 Vue.use(ActionCableVue, {
   debug: true,
   debugLevel: 'all',
-  connectionUrl: `ws://${process.env.WS_HOST}/cable`
+  connectionUrl: process.env.WS_HOST
 })
 Vue.config.productionTip = false
 
