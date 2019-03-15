@@ -1,11 +1,11 @@
 const express = require('express');
-const path = require('path');
 const serveStatic = require('serve-static');
 const compression = require('compression');
-const secure = require('express-force-https');
+const forceSsl = require('force-ssl-heroku');
 
 let app = express();
-app.use(secure,compression(),serveStatic(__dirname + "/dist"));
+app.use(forceSsl);
+app.use(compression(),serveStatic(__dirname + "/dist"));
 
 app.get('*', function (req, res) {
   res.sendFile(__dirname + '/dist/index.html')
