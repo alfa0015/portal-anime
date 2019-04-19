@@ -4,8 +4,8 @@ v-card(v-if="episode.attributes")
     div
       .headline {{episode.attributes.anime.data.attributes.name}} capitulo {{episode.id}}
   v-card-actions
-    v-btn(flat='') Share
-    v-btn(flat='', color='purple') Explore
+    v-btn(flat='') Compartir
+    v-btn(flat='', color='orange', :to="{path: '/episode/' + episode.id}") Ver
     v-spacer
     v-btn(icon='', @click='show = !show')
       v-icon {{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}
