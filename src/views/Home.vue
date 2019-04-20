@@ -14,7 +14,7 @@
         ></v-pagination>
       </v-flex>
       <v-flex xs12>
-        <button v-if="notificationsSupported" @click="askPermission">Enable notifications</button>
+        <button @click="askPermission">Enable notifications</button>
       </v-flex>
     </v-layout>
   </v-container>
